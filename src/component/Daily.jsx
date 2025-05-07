@@ -89,7 +89,7 @@ const Daily = () => {
               >
                 <img
                   className="w-10 h-auto pb-2"
-                  src={`${import.meta.env.BASE_URL}/assets/${day.icon}`}
+                  src={`${import.meta.env.BASE_URL}assets/${day.icon}`}
                   alt={day.day}
                 />
                 <div className="text-sm font-medium">{day.day}</div>
