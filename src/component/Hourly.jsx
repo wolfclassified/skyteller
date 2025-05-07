@@ -74,7 +74,7 @@ const Hourly = () => {
             result.push({
               time: formattedHour,
               temp: Math.round(temperature_2m[i]),
-              icon: `/assets/${weather_code[i]}${isNight ? "n" : ""}.svg`,
+              icon: `${import.meta.env.BASE_URL}/assets/${weather_code[i]}${isNight ? "n" : ""}.svg`,
             });
           }
 
