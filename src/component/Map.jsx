@@ -45,6 +45,7 @@ const TemperatureMap = () => {
         className={`relative w-full h-80 rounded-[30px] overflow-hidden shadow-md transition-opacity duration-300 border-2 border-white/10 ${
           showPopup ? "opacity-0 pointer-events-none" : "opacity-100"
         }`}
+        onClick={() => setShowPopup(true)}
       >
         {loading && (
           <div className="absolute inset-0 bg-gray-200 animate-pulse z-30 rounded-[30px]" />
@@ -57,27 +58,12 @@ const TemperatureMap = () => {
             
             <div className="absolute inset-0 bg-white bg-opacity-5 z-10 pointer-events-none rounded-[30px]" />
 
-            
-            <button
-              className="absolute bottom-20 right-4 z-20 bg-white text-[#1E78C7] font-extrabold text-xl w-10 h-10 rounded-full shadow flex items-center justify-center"
-              onClick={zoomIn}
-            >
-              +
-            </button>
-            <button
-              className="absolute bottom-8 right-4 z-20 bg-white text-[#1E78C7] font-extrabold text-xl w-10 h-10 rounded-full shadow flex items-center justify-center"
-              onClick={zoomOut}
-            >
-              -
-            </button>
-
-            
             <button
               className="absolute top-4 left-4 z-20 bg-white text-[#1E78C7] font-medium px-4 py-2 rounded-full shadow-lg flex items-center gap-2 hover:shadow-xl transition"
               onClick={() => setShowPopup(true)}
             >
               <span>Play Weather Forecast</span>
-              <img src={`${import.meta.env.BASE_URL}assets/mappop.svg`} alt="Open Map" className="w-5 h-5" />
+              <img src="/assets/mappop.svg" alt="Open Map" className="w-5 h-5" />
             </button>
           </>
         )}
