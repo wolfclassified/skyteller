@@ -77,7 +77,7 @@ const TemperatureMap = () => {
               onClick={() => setShowPopup(true)}
             >
               <span>Play Weather Forecast</span>
-              <img src={`${import.meta.env.BASE_URL}assets/mappop.svg`} alt="Open Map" className="w-5 h-5" />
+              <img src="/assets/mappop.svg" alt="Open Map" className="w-5 h-5" />
             </button>
           </>
         )}

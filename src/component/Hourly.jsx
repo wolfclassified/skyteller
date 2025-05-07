@@ -74,7 +74,7 @@ const Hourly = () => {
             result.push({
               time: formattedHour,
               temp: Math.round(temperature_2m[i]),
-              icon: `${import.meta.env.BASE_URL}/assets/${weather_code[i]}${isNight ? "n" : ""}.svg`,
+              icon: `/assets/${weather_code[i]}${isNight ? "n" : ""}.svg`,
             });
           }
 
@@ -127,9 +127,9 @@ const Hourly = () => {
                   <div className="text-xl font-bold">{hour.temp}°</div>
                   <img
                     className="w-8 h-auto pt-2"
-                    src={`${import.meta.env.BASE_URL}assets/${weather_code[i]}${isNight ? "n" : ""}.svg`}
+                    src={hour.icon}
                     alt="Weather icon"
-                    onError={(e) => (e.currentTarget.src = `${import.meta.env.BASE_URL}assets/unknown.svg`)}
+                    onError={(e) => (e.currentTarget.src = "/assets/unknown.svg")}
                   />
                 </div>
               ))}
