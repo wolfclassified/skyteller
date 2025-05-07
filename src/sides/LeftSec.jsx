@@ -9,11 +9,42 @@ const LeftSec = () => {
   const [suggestions, setSuggestions] = useState([]);
   const [selectedCities, setSelectedCities] = useState([]);
   const { activeLocation, setActiveLocation } = useActiveLocation();
+  const [time, setTime] = useState("");
+  const [today, setToday] = useState("");
 
-  const date = new Date();
-  const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-  const time = date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: false });
-  const today = date.toLocaleDateString(undefined, options);
+  const formatTimeAndDate = (timezone) => {
+    const now = timezone
+      ? new Date().toLocaleString("en-US", { timeZone: timezone })
+      : new Date();
+
+    const options = {
+      weekday: "long",
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    };
+
+    setTime(new Date(now).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", hour12: false }));
+    setToday(new Date(now).toLocaleDateString(undefined, options));
+  };
+
+  useEffect(() => {
+    if (activeLocation?.timezone) {
+      formatTimeAndDate(activeLocation.timezone);
+    } else {
+      formatTimeAndDate();
+    }
+
+    const intervalId = setInterval(() => {
+      if (activeLocation?.timezone) {
+        formatTimeAndDate(activeLocation.timezone);
+      } else {
+        formatTimeAndDate();
+      }
+    }, 10000); // Updates every 10 seconds
+
+    return () => clearInterval(intervalId);
+  }, [activeLocation]);
 
   useEffect(() => {
     const fetchSuggestions = async () => {

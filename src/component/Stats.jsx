@@ -267,8 +267,8 @@ const Stats = () => {
     };
 
     return (
-      <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60">
-        <div className="bg-white rounded-[30px] w-[90%] max-w-[1000px] overflow-hidden text-black">
+      <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60 p-4">
+        <div className="bg-white rounded-[30px] w-full max-w-[800px] max-h-[90vh] overflow-y-auto text-black p-6">
           <div className="relative h-52 w-full">
             <img
               src={backgroundImages[selectedStat.label]}
