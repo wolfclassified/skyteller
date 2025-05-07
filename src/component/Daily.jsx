@@ -89,7 +89,7 @@ const Daily = () => {
               >
                 <img
                   className="w-10 h-auto pb-2"
-                  src={`/static/assets/${day.icon}`}
+                  src={`/skyteller/assets/${day.icon}`}
                   alt={day.day}
                 />
                 <div className="text-sm font-medium">{day.day}</div>
