@@ -124,9 +124,9 @@ const MainCard = () => {
 
   const getCustomIcon = (code) => {
     const hour = new Date().getHours();
-    const isNight = hour >= 18 || hour < 6;
-  
-    return `/assets/${code}${isNight ? "n" : ""}.svg`;
+  const isNight = hour >= 18 || hour < 6;
+
+  return `${import.meta.env.BASE_URL}assets/${code}${isNight ? "n" : ""}.svg`;
   };
 
   const isActive = activeLocation?.city === locationName;

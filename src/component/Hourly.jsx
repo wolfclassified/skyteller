@@ -127,9 +127,9 @@ const Hourly = () => {
                   <div className="text-xl font-bold">{hour.temp}°</div>
                   <img
                     className="w-8 h-auto pt-2"
-                    src={hour.icon}
+                    src={`${import.meta.env.BASE_URL}assets/${weather_code[i]}${isNight ? "n" : ""}.svg`}
                     alt="Weather icon"
-                    onError={(e) => (e.currentTarget.src = "/assets/unknown.svg")}
+                    onError={(e) => (e.currentTarget.src = `${import.meta.env.BASE_URL}assets/unknown.svg`)}
                   />
                 </div>
               ))}

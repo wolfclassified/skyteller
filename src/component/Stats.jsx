@@ -1,23 +1,24 @@
 import React, { useEffect, useState } from "react";
 import { useActiveLocation } from "../context/ActiveLocationContext";
 
-import wind from "/assets/wind.svg";
-import visibility from "/assets/visibility.svg";
-import uvindex from "/assets/uvindex.svg";
-import pressure from "/assets/pressure.svg";
-import humidity from "/assets/humidity.svg";
-import dewpoint from "/assets/dewpoint.svg";
-import precipitation from "/assets/precipitation.svg";
-import air from "/assets/air.svg";
-import information from "/assets/information.svg";
-import uv from "/assets/uv.png";
-import humiditys from "/assets/humidity.png";
-import winds from "/assets/wind.png";
-import dew from "/assets/dew.png";
-import pressures from "/assets/pressure.png";
-import visibilitys from "/assets/visibility.png";
-import precipitations from "/assets/precipitation.png";
-import airs from "/assets/airs.png";
+import wind from `${import.meta.env.BASE_URL}assets/wind.svg`;
+import visibility from `${import.meta.env.BASE_URL}assets/visibility.svg`;
+import uvindex from `${import.meta.env.BASE_URL}assets/uvindex.svg`;
+import pressure from `${import.meta.env.BASE_URL}assets/pressure.svg`;
+import humidity from `${import.meta.env.BASE_URL}assets/humidity.svg`;
+import dewpoint from `${import.meta.env.BASE_URL}assets/dewpoint.svg`;
+import precipitation from `${import.meta.env.BASE_URL}assets/precipitation.svg`;
+import air from `${import.meta.env.BASE_URL}assets/air.svg`;
+import information from `${import.meta.env.BASE_URL}assets/information.svg`;
+import uv from `${import.meta.env.BASE_URL}assets/uv.png`;
+import humiditys from `${import.meta.env.BASE_URL}assets/humidity.png`;
+import winds from `${import.meta.env.BASE_URL}assets/wind.png`;
+import dew from `${import.meta.env.BASE_URL}assets/dew.png`;
+import pressures from `${import.meta.env.BASE_URL}assets/pressure.png`;
+import visibilitys from `${import.meta.env.BASE_URL}assets/visibility.png`;
+import precipitations from `${import.meta.env.BASE_URL}assets/precipitation.png`;
+import airs from `${import.meta.env.BASE_URL}assets/airs.png`;
+
 
 
 const Stats = () => {
