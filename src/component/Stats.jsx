@@ -20,7 +20,6 @@ import precipitations from `${import.meta.env.BASE_URL}assets/precipitation.png`
 import airs from `${import.meta.env.BASE_URL}assets/airs.png`;
 
 
-
 const Stats = () => {
   const { activeLocation } = useActiveLocation();
   const [statsData, setStatsData] = useState(null);
