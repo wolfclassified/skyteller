@@ -126,7 +126,7 @@ const MainCard = () => {
     const hour = new Date().getHours();
     const isNight = hour >= 18 || hour < 6;
   
-    return `/assets/${code}${isNight ? "n" : ""}.svg`;
+    return `${import.meta.env.BASE_URL}assets/${code}${isNight ? "n" : ""}.svg`;
   };
 
   const isActive = activeLocation?.city === locationName;
