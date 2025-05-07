@@ -306,7 +306,7 @@ const Stats = () => {
             key={index}
             className="rounded-[20px] bg-white/10 border-[1px] border-white/20 backdrop-blur-[8px] p-4 animate-pulse"
           >
-            {/* Icon and label placeholder */}
+            
             <div className="flex items-center justify-between mb-5">
               <div className="flex items-center gap-2">
                 <div className="w-6 h-6 bg-white/30 rounded-full" />
@@ -315,7 +315,7 @@ const Stats = () => {
               <div className="w-4 h-4 bg-white/30 rounded-full" />
             </div>
   
-            {/* Value placeholder */}
+            
             <div className="text-4xl font-semibold mb-5 pt-2 pl-5">
               <div className="h-10 w-28 bg-white/30 rounded-md" />
             </div>

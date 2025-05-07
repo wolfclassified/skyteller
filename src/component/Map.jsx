@@ -8,13 +8,13 @@ const TemperatureMap = () => {
   const mapRef = useRef(null);
   const [mapInstance, setMapInstance] = useState(null);
   const [showPopup, setShowPopup] = useState(false);
-  const [loading, setLoading] = useState(true); // Loading state
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     if (activeLocation && activeLocation.latitude && activeLocation.longitude) {
       const { latitude, longitude } = activeLocation;
 
-      setLoading(true); // Start loading
+      setLoading(true);
 
       if (mapRef.current && !mapInstance) {
         const map = L.map(mapRef.current, {
@@ -27,7 +27,7 @@ const TemperatureMap = () => {
           attribution: "&copy; OpenStreetMap contributors",
         }).addTo(map);
 
-        map.whenReady(() => setLoading(false)); // Set loading false when map finishes
+        map.whenReady(() => setLoading(false));
         setMapInstance(map);
       } else if (mapInstance) {
         mapInstance.setView([latitude, longitude]);
@@ -54,10 +54,10 @@ const TemperatureMap = () => {
 
         {!loading && (
           <>
-            {/* Overlay (optional) */}
+            
             <div className="absolute inset-0 bg-white bg-opacity-5 z-10 pointer-events-none rounded-[30px]" />
 
-            {/* Zoom Buttons */}
+            
             <button
               className="absolute bottom-20 right-4 z-20 bg-white text-[#1E78C7] font-extrabold text-xl w-10 h-10 rounded-full shadow flex items-center justify-center"
               onClick={zoomIn}
@@ -71,7 +71,7 @@ const TemperatureMap = () => {
               -
             </button>
 
-            {/* Forecast Button */}
+            
             <button
               className="absolute top-4 left-4 z-20 bg-white text-[#1E78C7] font-medium px-4 py-2 rounded-full shadow-lg flex items-center gap-2 hover:shadow-xl transition"
               onClick={() => setShowPopup(true)}

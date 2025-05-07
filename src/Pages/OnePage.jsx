@@ -12,7 +12,7 @@ const OnePage = () => {
     const fetchWeatherAndSetBackground = async () => {
       if (!activeLocation) return;
 
-      setLoading(true); // Begin loading
+      setLoading(true);
 
       const { latitude, longitude } = activeLocation;
 
@@ -39,7 +39,7 @@ const OnePage = () => {
         console.error("Failed to fetch weather or background:", err);
         setBackgroundImage('/assets/default.svg');
       } finally {
-        setLoading(false); // Done loading
+        setLoading(false);
       }
     };
 

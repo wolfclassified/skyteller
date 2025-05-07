@@ -1,13 +1,13 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
 
-// Create the context
+
 const ActiveLocationContext = createContext({
   activeLocation: null,
   setActiveLocation: () => {},
   error: null,
 });
 
-// Default fallback location (London)
+
 const defaultLocation = {
   city: "London",
   latitude: 51.5072,
@@ -15,10 +15,10 @@ const defaultLocation = {
   temp: null,
   feelsLike: null,
   iconCode: 0,
-  isDefault: true, // used only when fallback is needed
+  isDefault: true,
 };
 
-// Provider component
+
 export const ActiveLocationProvider = ({ children }) => {
   const [activeLocation, setActiveLocation] = useState(null);
   const [error, setError] = useState(null);
@@ -56,12 +56,12 @@ export const ActiveLocationProvider = ({ children }) => {
         (err) => {
           console.warn("Geolocation error:", err);
           setError("Failed to get geolocation");
-          setActiveLocation({ ...defaultLocation }); // fallback to London
+          setActiveLocation({ ...defaultLocation });
         }
       );
     } else {
       setError("Geolocation not supported");
-      setActiveLocation({ ...defaultLocation }); // fallback
+      setActiveLocation({ ...defaultLocation });
     }
   }, []);
 
@@ -72,7 +72,7 @@ export const ActiveLocationProvider = ({ children }) => {
   );
 };
 
-// Custom hook
+
 export const useActiveLocation = () => {
   const context = useContext(ActiveLocationContext);
   if (!context) {

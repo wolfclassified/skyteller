@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import MainCard from "../component/MainCard";
 import SubCard from "../component/SubCard";
 import { useActiveLocation } from "../context/ActiveLocationContext";
-import tzLookup from "tz-lookup"; // ✅ Import the tz-lookup package
+import tzLookup from "tz-lookup";
 
 const LeftSec = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -41,7 +41,7 @@ const LeftSec = () => {
     try {
       const lat = location.latitude;
       const lon = location.longitude;
-      const timezone = tzLookup(lat, lon); // ✅ Get timezone name from coordinates
+      const timezone = tzLookup(lat, lon);
 
       const res = await fetch(
         `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,apparent_temperature,weather_code&timezone=${timezone}`
@@ -55,7 +55,7 @@ const LeftSec = () => {
         iconCode: data.current.weather_code,
         latitude: lat,
         longitude: lon,
-        timezone, // ✅ Pass timezone
+        timezone,
       };
 
       setActiveLocation({ ...newCard, isDefault: false });
@@ -123,7 +123,7 @@ const LeftSec = () => {
               temp={city.temp}
               feelsLike={city.feelsLike}
               iconCode={city.iconCode}
-              timezone={city.timezone} // ✅ Pass timezone
+              timezone={city.timezone}
             />
           ))
         )}

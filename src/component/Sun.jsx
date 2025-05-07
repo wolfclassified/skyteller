@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useActiveLocation } from "../context/ActiveLocationContext";
-import tzlookup from "tz-lookup"; // ✅ Add this import
+import tzlookup from "tz-lookup";
 
 const Sun = () => {
   const { activeLocation } = useActiveLocation();
   const [sunData, setSunData] = useState({ sunrise: null, sunset: null });
   const [bgImage, setBgImage] = useState("sunbg.svg");
-  const [localTimezone, setLocalTimezone] = useState(null); // ✅ Add state for timezone
+  const [localTimezone, setLocalTimezone] = useState(null);
 
   const formatLocalTime = (dateStr, timezone) => {
     const utcDate = new Date(dateStr);
@@ -24,7 +24,7 @@ const Sun = () => {
 
       const { latitude, longitude } = activeLocation;
 
-      // ✅ Get the timezone using tz-lookup
+      
       try {
         const timezone = tzlookup(latitude, longitude);
         setLocalTimezone(timezone);
@@ -71,7 +71,7 @@ const Sun = () => {
     setBgImage(`sunbg${section}.svg`);
   }, [sunData]);
 
-  // ✅ Use the detected local timezone instead of browser timezone
+  
   const formattedSunrise =
     sunData.sunrise && localTimezone
       ? formatLocalTime(sunData.sunrise, localTimezone)
